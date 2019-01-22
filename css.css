@@ -11,7 +11,6 @@ body{
 
 input {
     padding: 5px;
-    width: 150px;
     font-size: 20px;
    }
 
@@ -20,12 +19,11 @@ input[type="button"] {
     width: 200px;
     -webkit-appearance: none;
     display: inline-block;
-    padding: 0.5em 1em;
     text-decoration: none;
     background: #668ad8;/*ボタン色*/
     color: #FFF;
     border-bottom: solid 4px #627295;
     border-radius: 3px;
-    font-size: 20px;
+    font-size: 25px;
 }
     
