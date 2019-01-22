@@ -17,6 +17,7 @@
 
 <script>
 var h = decodeURIComponent(document.location.hash).substr(1);
+alert(h);
 //h=JSON.parse(h);
 
 // Get a handle to the button's HTML element
@@ -28,8 +29,6 @@ var h = decodeURIComponent(document.location.hash).substr(1);
     var lc_year = document.getElementById('lc_year');
     var lc_id_text = document.getElementById('lc_id_text');
  
-    alert(lc_year.value);
-
     // Make a data object to be sent, coercing value types to integers
     var options = {
       'lc_year': parseInt(lc_year.value,10),
