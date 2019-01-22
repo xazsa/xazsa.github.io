@@ -7,7 +7,7 @@
   <body>
     <h1>Tekura Setting Page</h1>
     <h2>Local Calender</h2>
-    Start Year : <input type="text" id='lc_year'  value="1989" size="5" maxlength="4"><br>
+    Start Year : <input type="text" id='lc_year' value="1989" size="5" maxlength="4"><br>
     Identification text: <input type="text" id="lc_id_text" value="H" size="2" maxlength="1"><br>
     <p>
         <input id='submit_button' type='button' value='Save'>
@@ -31,7 +31,7 @@ alert(document.location);
  
     // Make a data object to be sent, coercing value types to integers
     var options = {
-      'lc_year': parseInt(lc_year.value, 16),
+      'lc_year': 19,//parseInt(lc_year.value, 16),
       'ic_id_text': lc_id_text.value
     };
 
