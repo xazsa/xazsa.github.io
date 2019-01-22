@@ -16,8 +16,12 @@
   </body>
 
 <script>
-    // Get a handle to the button's HTML element
-    var submitButton = document.getElementById('submit_button');
+var h = decodeURIComponent(document.location.hash).substr(1);
+alert(h);
+//h=JSON.parse(h);
+
+// Get a handle to the button's HTML element
+  var submitButton = document.getElementById('submit_button');
   
   // Add a 'click' listener
   submitButton.addEventListener('click', function() {
