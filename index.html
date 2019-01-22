@@ -32,7 +32,7 @@ var h = decodeURIComponent(document.location.hash).substr(1);
 
     // Make a data object to be sent, coercing value types to integers
     var options = {
-      'lc_year': parseInt(lc_year.value),
+      'lc_year': parseInt(lc_year.value,10),
       'ic_id_text': lc_id_text.value
     };
 
