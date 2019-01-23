@@ -4,55 +4,35 @@
     <title>Configurable</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css.css">
   </head>
   <body>
-    <div data-role="page" id="main">
-      <div data-role="header" class="jqm-header">
-        <h1>Configurable Pebble App</h1>
-      </div>
-
-      <div data-role="content">
-
-        <div data-role="fieldcontain">
-          <label for="name">Name:</label>
-          <textarea cols="40" rows="1" name="name" id="name"></textarea>
-        </div>
-
-        <div data-role="fieldcontain">
-          <label for="special-feature">Activate special feature:</label>
-          <select name="special-feature" id="special-feature" data-role="slider">
-            <option value="off">Off</option>
-            <option value="on">On</option>
-          </select>
-        </div>
-
-        <div data-role="fieldcontain">
-          <fieldset data-role="controlgroup">
-            <legend>Choose as many snacks as you'd like:</legend>
-            <input type="checkbox" name="checkbox-cheetos" id="checkbox-cheetos" class="custom" />
-            <label for="checkbox-cheetos">Cheetos</label>
-
-            <input type="checkbox" name="checkbox-doritos" id="checkbox-doritos" class="custom" />
-            <label for="checkbox-doritos">Doritos</label>
-
-            <input type="checkbox" name="checkbox-fritos" id="checkbox-fritos" class="custom" />
-            <label for="checkbox-fritos">Fritos</label>
-
-            <input type="checkbox" name="checkbox-sunchips" id="checkbox-sunchips" class="custom" />
-            <label for="checkbox-sunchips">Sun Chips</label>
-            </fieldset>
-          </div>
-        </div>
-
-        <div class="ui-body ui-body-b">
-          <fieldset class="ui-grid-a">
-              <div class="ui-block-a"><button type="submit" data-theme="d" id="b-cancel">Cancel</button></div>
-              <div class="ui-block-b"><button type="submit" data-theme="a" id="b-submit">Submit</button></div>
-            </fieldset>
-          </div>
-        </div>
-      </div>
-    </div>
+      <table class="cform">
+          <tbody>
+          <tr>
+          <th>お名前<span class="required-srt">必須</span></th>
+          <td>[mwform_text name="your-name" size="0"]</td>
+          </tr>
+          <tr>
+          <th>フリガナ<span class="required-srt">必須</span></th>
+          <td>[mwform_text name="hurigana" size="0"]</td>
+          </tr>
+          <tr>
+          <th>メールアドレス<span class="required-srt">必須</span></th>
+          <td>[mwform_email name="mail" size="0"]</td>
+          </tr>
+          <tr>
+          <th>メールアドレス（確認）<span class="required-srt">必須</span></th>
+          <td>[mwform_email name="mail-confirm" size="0"]</td>
+          </tr>
+          <tr>
+          <th>お問い合わせ内容<span class="required-srt">必須</span></th>
+          <td>[mwform_textarea name="contents" cols="50" rows="5"]</td>
+          </tr>
+          </tbody>
+          </table>
+          <div class="submit-btn">[mwform_submitButton name="確認送信" confirm_value="確認画面へ進む" submit_value="送信する"]</div>
+          <p style="text-align: center;">[mwform_backButton value="戻る"]</p>
     <script>
         alert(window.location.href);
 
