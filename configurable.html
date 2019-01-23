@@ -7,33 +7,25 @@
     <link rel="stylesheet" type="text/css" href="css.css">
   </head>
   <body>
-      <table class="cform">
-          <tbody>
-          <tr>
-          <th>お名前<span class="required-srt">必須</span></th>
-          <td>[mwform_text name="your-name" size="0"]</td>
-          </tr>
-          <tr>
-          <th>フリガナ<span class="required-srt">必須</span></th>
-          <td>[mwform_text name="hurigana" size="0"]</td>
-          </tr>
-          <tr>
-          <th>メールアドレス<span class="required-srt">必須</span></th>
-          <td>[mwform_email name="mail" size="0"]</td>
-          </tr>
-          <tr>
-          <th>メールアドレス（確認）<span class="required-srt">必須</span></th>
-          <td>[mwform_email name="mail-confirm" size="0"]</td>
-          </tr>
-          <tr>
-          <th>お問い合わせ内容<span class="required-srt">必須</span></th>
-          <td>[mwform_textarea name="contents" cols="50" rows="5"]</td>
-          </tr>
-          </tbody>
-          </table>
-          <div class="submit-btn">[mwform_submitButton name="確認送信" confirm_value="確認画面へ進む" submit_value="送信する"]</div>
-          <p style="text-align: center;">[mwform_backButton value="戻る"]</p>
-    <script>
+
+      <input type="text" name="formName" id="formName" placeholder="" value="" size="50" maxlength="50">
+
+      <textarea name="formContent" id="formContent" cols="40" rows="3"></textarea>
+
+      <div class="form-select">
+          <select name="selectSample" id="selectSample">
+              <option value="">選択してください</option>
+              <option value="プルダウン01">プルダウン01</option>
+              <option value="プルダウン02">プルダウン02</option>
+              <option value="プルダウン03">プルダウン03</option>
+              <option value="プルダウン04">プルダウン04</option>
+          </select>
+      </div>
+
+      <button type="submit" name="submitConfirm" value="confirm">確認画面へ</button>  
+
+
+<script>
         alert(window.location.href);
 
     </script>
