@@ -57,6 +57,9 @@
       </div>
     </div>
     <script>
+      var obj = jQuery.parseJSON(decodeURIComponent(window.location.search.substring(1)));
+        alert(obj);
+        
       function saveOptions() {
         var options = {}
         //Add all textual values
