@@ -24,8 +24,9 @@
 
 
 <script>
-        alert(window.location.href);
-
+        // alert(window.location.href);
+        var h = decodeURIComponent(document.location.hash).substr(1);
+        alert(h);
     </script>
   </body>
 </html>
