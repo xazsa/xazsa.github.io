@@ -54,6 +54,14 @@ select::-ms-expand {
 }
 
 /*
+body
+*/
+body{
+    bgcolor: #fd9c09;
+  }
+
+
+/*
 input[type="text"] textarea
 input[type="●●●"] 適宜追加
 */
