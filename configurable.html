@@ -20,7 +20,7 @@ ID Text (ex.Heisei→H）<br>
 
 <script>
     var options = JSON.parse(decodeURIComponent(window.location.search.substring(1)));
-    //alert(JSON.stringify(options));
+    alert(JSON.stringify(options));
     if (options.lc_year) {
         var obj = document.getElementById("lc_year");
         obj.value = options.lc_year;
