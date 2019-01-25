@@ -8,25 +8,20 @@
   </head>
   <body>
 あああああ
-      <input type="text" name="formName" id="formName" placeholder="" value="" size="5" maxlength="5"><br>
-
-      <div class="form-select">
-          <select name="selectSample" id="selectSample">
-              <option value="">選択してください</option>
-              <option value="プルダウン01">プルダウン01</option>
-              <option value="プルダウン02">プルダウン02</option>
-              <option value="プルダウン03">プルダウン03</option>
-              <option value="プルダウン04">プルダウン04</option>
-          </select>
-      </div>
-
-      <button type="submit" name="submitConfirm" value="confirm">確認画面へ</button>  
-
+<label for="startYear">Whatcha wanna find?</label>
+<textarea cols="5" rows="1" name="startYear" id="startYear"></textarea>
+<button type="submit" id="b-cancel">Cancel</button>
+<button type="submit" id="b-submit">Submit</button>
 
 <script>
         // alert(window.location.href);
         var options = JSON.parse(localStorage.getItem('config_data'));
         alert('Configuration loaded: ' + JSON.stringify(options));
-    </script>
+
+
+    $('#b-cancel').click(function() {
+        document.location = 'pebblejs://close';
+    });
+</script>
   </body>
 </html>
