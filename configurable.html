@@ -25,8 +25,8 @@
 
 <script>
         // alert(window.location.href);
-        var h = decodeURIComponent(document.location.hash);
-        alert(h);
+        var options = JSON.parse(localStorage.getItem('config_data'));
+        alert('Configuration loaded: ' + JSON.stringify(options));
     </script>
   </body>
 </html>
