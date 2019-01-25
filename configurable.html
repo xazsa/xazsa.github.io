@@ -9,24 +9,60 @@
     <link rel="stylesheet" type="text/css" href="css.css">
   </head>
   <body>
-Start Year(ex.Heisei→1982）<br>
+Start Year(ex.Heisei→1989）<br>
 <input type="text" name="startYear" size="5" maxlength="4" id="startYear"><br>
 ID Text (ex.Heisei→H）<br>
 <input type="text" name="idText" size="5" maxlength="2" id="idText"><br>
 <br>
 <hr><br>
-<input type="reset" name="b-cancel" id="b-cancel" value="CANCEL">
-<input type="submit" name="b-submit" id="b-submit" value="SUBMIT">
+<input type="reset" id='cancel_button' value="CANCEL">
+<input type="submit" id='submit_button' value="SUBMIT">
 
 <script>
-        // alert(window.location.href);
-        var options = JSON.parse(localStorage.getItem('config_data'));
-        alert('Configuration loaded: ' + JSON.stringify(options));
+    var options = JSON.parse(decodeURIComponent(window.location.search.substring(1)));
+    //alert(JSON.stringify(options));
+    if (options.lc_year) {
+        var obj = document.getElementById("startYear");
+        obj.value = options.lc_year;
+    }
+    if (options.lc_id_text) {
+        var obj = document.getElementById("idText");
+        obj.value = options.lc_id_text;
+    }
 
-
-    $('#b-cancel').click(function() {
+    cancel_button.addEventListener('click', function() {
         document.location = 'pebblejs://close';
     });
+
+    submit_button.addEventListener('click', function() {
+        // Get the config data from the UI elements
+        var lc_year = document.getElementById('lc_year');
+        var lc_id_text = document.getElementById('lc_id_text');
+ 
+        // Make a data object to be sent, coercing value types to integers
+        var options = {
+        'lc_year': parseInt(lc_year.value,10),
+        'ic_id_text': lc_id_text.value
+        };
+
+        // Determine the correct return URL (emulator vs real watch)
+        function getQueryParam(variable, defaultValue) {
+        var query = location.search.substring(1);
+        var vars = query.split('&');
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split('=');
+            if (pair[0] === variable) {
+            return decodeURIComponent(pair[1]);
+            }
+        }
+        return defaultValue || false;
+        }
+        var return_to = getQueryParam('return_to', 'pebblejs://close#');
+
+        // Encode and send the data when the page closes
+        document.location = return_to + encodeURIComponent(JSON.stringify(options));
+        });
+          
 </script>
   </body>
 </html>
