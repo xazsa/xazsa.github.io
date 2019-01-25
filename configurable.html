@@ -10,9 +10,9 @@
   </head>
   <body>
 Start Year(ex.Heisei→1989）<br>
-<input type="text" name="startYear" size="5" maxlength="4" id="startYear"><br>
+<input type="text" size="5" maxlength="4" id="lc_year"><br>
 ID Text (ex.Heisei→H）<br>
-<input type="text" name="idText" size="5" maxlength="2" id="idText"><br>
+<input type="text" size="5" maxlength="2" id="lc_id_text"><br>
 <br>
 <hr><br>
 <input type="reset" id='cancel_button' value="CANCEL">
@@ -22,11 +22,11 @@ ID Text (ex.Heisei→H）<br>
     var options = JSON.parse(decodeURIComponent(window.location.search.substring(1)));
     //alert(JSON.stringify(options));
     if (options.lc_year) {
-        var obj = document.getElementById("startYear");
+        var obj = document.getElementById("lc_year");
         obj.value = options.lc_year;
     }
     if (options.lc_id_text) {
-        var obj = document.getElementById("idText");
+        var obj = document.getElementById("lc_id_text");
         obj.value = options.lc_id_text;
     }
 
@@ -61,8 +61,8 @@ ID Text (ex.Heisei→H）<br>
 
         // Encode and send the data when the page closes
         document.location = return_to + encodeURIComponent(JSON.stringify(options));
-        });
-          
+    });
+
 </script>
   </body>
 </html>
