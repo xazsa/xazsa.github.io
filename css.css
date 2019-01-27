@@ -42,6 +42,10 @@ background: -webkit-gradient(linear, left top, left bottom, from(#222), to(#444)
    -webkit-box-shadow: 1px 1px 1px #333;
 }
 
+hr{
+  width: 80%;
+}
+
 input:focus, textarea:focus, select:focus {outline-color: #c00;}
 
 textarea {
