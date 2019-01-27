@@ -49,17 +49,17 @@ ID Text (ex.Heisei→H）<br>
         
         var lc_year = document.getElementById('lc_year').value;
         if(isNaN(lc_year)){
-            alert('Start year is not number:'+lc_year.value);
+            alert('Start year is not number:'+lc_year);
             location.hash='start_year';
             return;    
         }
 
-        var lc_id_text = document.getElementById('lc_id_text');
+        var lc_id_text = document.getElementById('lc_id_text').value;
  
         // Make a data object to be sent, coercing value types to integers
         var options = {
-        'lc_year': parseInt(lc_year.value,10),
-        'lc_id_text': lc_id_text.value
+        'lc_year': parseInt(lc_year,10),
+        'lc_id_text': lc_id_text
         };
 
         // Determine the correct return URL (emulator vs real watch)
