@@ -21,15 +21,18 @@ ID Text (ex.Heisei→H）<br>
 <input type="submit" id='submit_button' value="SUBMIT">
 
 <script>
-    var options = JSON.parse(decodeURIComponent(window.location.search.substring(1)));
-    //alert(JSON.stringify(options));
-    if (options.lc_year) {
-        var obj = document.getElementById("lc_year");
-        obj.value = options.lc_year;
-    }
-    if (options.lc_id_text) {
-        var obj = document.getElementById("lc_id_text");
-        obj.value = options.lc_id_text;
+    alert(window.location.search.substring(1));
+    if(window.location.search.substring(1) != null){}
+        var options = JSON.parse(decodeURIComponent(window.location.search.substring(1)));
+        //alert(JSON.stringify(options));
+        if (options.lc_year) {
+            var obj = document.getElementById("lc_year");
+            obj.value = options.lc_year;
+        }
+        if (options.lc_id_text) {
+            var obj = document.getElementById("lc_id_text");
+            obj.value = options.lc_id_text;
+        }
     }
 
     cancel_button.addEventListener('click', function() {
