@@ -30,8 +30,8 @@ p {margin: 0 0 1em; font-size: 14px;}
 
 input, textarea, select {
   border: 1px solid #111;
-  /*padding: 0.5em;*/
-  padding: 0.5em 1em 0.5em 0.75em;
+  padding: 0.5em;
+  margin: 10px 10px 10px 10px;
   font-size: 15px;
   line-height: 1.2em;
   width: 80%;
