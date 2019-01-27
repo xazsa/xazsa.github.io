@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Configurable</title>
-    <meta charset="utf-8">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Cache-Control" content="no-cache">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css.css">
-  </head>
-  <body>
+<head>
+<title>Configurable</title>
+<meta charset="utf-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<body>
+<a name="pagetop"></a>
 <H1>Tekura Setting Page</H1>
 
 Start Year(ex.Heisei→1989）<br>
@@ -19,6 +20,8 @@ ID Text (ex.Heisei→H）<br>
 <hr><br>
 <input type="reset" id='cancel_button' value="CANCEL">
 <input type="submit" id='submit_button' value="SUBMIT">
+<hr><br>
+<input type="button" id='reset_button' value="RESET">
 
 <script>
     //alert("#"+ window.location.search.substring(1)+"#");
@@ -68,6 +71,11 @@ ID Text (ex.Heisei→H）<br>
         document.location = return_to + encodeURIComponent(JSON.stringify(options));
     });
 
+    reset_button.addEventListener('click', function() {
+        document.getElementById("lc_year").value = 1989;
+        document.getElementById("lc_id_text").value = "H";
+        location.hash='pagetop';
+    });
 </script>
   </body>
 </html>
