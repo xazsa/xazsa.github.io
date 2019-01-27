@@ -22,7 +22,7 @@ ID Text (ex.Heisei→H）<br>
 
 <script>
     alert(window.location.search.substring(1));
-    if(window.location.search.substring(1) != null){
+    if(window.location.search.substring(1) != ""){
         var options = JSON.parse(decodeURIComponent(window.location.search.substring(1)));
         //alert(JSON.stringify(options));
         if (options.lc_year) {
