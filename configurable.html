@@ -12,6 +12,7 @@
 <a name="pagetop"></a>
 <H1>Tekura Setting</H1>
 
+<a name="start_year"></a>
 Start Year(ex.Heisei→1989）<br>
 <input type="text" size="5" maxlength="4" id="lc_year"><br>
 ID Text (ex.Heisei→H）<br>
@@ -37,13 +38,24 @@ ID Text (ex.Heisei→H）<br>
         }
     }
 
+    
+
     cancel_button.addEventListener('click', function() {
         document.location = 'pebblejs://close';
     });
 
     submit_button.addEventListener('click', function() {
         // Get the config data from the UI elements
-        var lc_year = document.getElementById('lc_year');
+        
+        var lc_year;
+        if(isNaN(document.getElementById('lc_year'))){
+            lc_year = document.getElementById('lc_year');
+        }else{
+            alert('Start year is not number');
+            location.hash='start_year';
+            return;    
+        }
+        
         var lc_id_text = document.getElementById('lc_id_text');
  
         // Make a data object to be sent, coercing value types to integers
