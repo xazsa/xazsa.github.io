@@ -47,15 +47,13 @@ ID Text (ex.Heisei→H）<br>
     submit_button.addEventListener('click', function() {
         // Get the config data from the UI elements
         
-        var lc_year;
-        if(isNaN(document.getElementById('lc_year'))){
-            lc_year = document.getElementById('lc_year');
-        }else{
+        var lc_year = document.getElementById('lc_year');
+        if(isNaN(lc_year)){
             alert('Start year is not number');
             location.hash='start_year';
             return;    
         }
-        
+
         var lc_id_text = document.getElementById('lc_id_text');
  
         // Make a data object to be sent, coercing value types to integers
