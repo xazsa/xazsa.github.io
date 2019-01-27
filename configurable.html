@@ -21,7 +21,7 @@ ID Text (ex.Heisei→H）<br>
 <input type="submit" id='submit_button' value="SUBMIT">
 
 <script>
-    alert("#"+ window.location.search.substring(1)+"#");
+    //alert("#"+ window.location.search.substring(1)+"#");
     if(window.location.search.substring(1) != ""){
         var options = JSON.parse(decodeURIComponent(window.location.search.substring(1)));
         //alert(JSON.stringify(options));
