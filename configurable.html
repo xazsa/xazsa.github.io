@@ -47,9 +47,9 @@ ID Text (ex.Heisei→H）<br>
     submit_button.addEventListener('click', function() {
         // Get the config data from the UI elements
         
-        var lc_year = document.getElementById('lc_year');
+        var lc_year = document.getElementById('lc_year').value;
         if(isNaN(lc_year)){
-            alert('Start year is not number:'+lc_year);
+            alert('Start year is not number:'+lc_year.value);
             location.hash='start_year';
             return;    
         }
