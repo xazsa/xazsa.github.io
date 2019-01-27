@@ -44,7 +44,7 @@ input, textarea, select {
 }
 
 hr{
-  width: 80%;
+  width: 90%;
 }
 
 input:focus, textarea:focus, select:focus {outline-color: #c00;}
