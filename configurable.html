@@ -17,6 +17,7 @@ Start Year(ex.Heisei→1989）<br>
 <div align="center">
 <input type="text" size="5" maxlength="4" id="lc_year"><br>
 </div>
+<a name="id_text"></a>
 ID Text (ex.Heisei→H）<br>
 <div align="center">
 <input type="text" size="5" maxlength="2" id="lc_id_text"><br>
@@ -45,7 +46,14 @@ ID Text (ex.Heisei→H）<br>
         }
     }
 
-    
+    function isAlpabet(str){
+        str = (str==null)?"":str;
+        if(str.match(/^[A-Za-z0-9]*$/)){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
     cancel_button.addEventListener('click', function() {
         document.location = 'pebblejs://close';
@@ -62,7 +70,11 @@ ID Text (ex.Heisei→H）<br>
         }
 
         var lc_id_text = document.getElementById('lc_id_text').value;
- 
+        if(isAlpabetlc_id_text){
+            alert('ID Text only use Alpabet:'+lc_id_text;
+            location.hash='id_text';
+            return;
+        }
         // Make a data object to be sent, coercing value types to integers
         var options = {
         'lc_year': parseInt(lc_year,10),
