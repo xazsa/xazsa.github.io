@@ -48,10 +48,10 @@ ID Text (ex.Heisei→H）<br>
 
     function isAlpabet(str){
         str = (str==null)?"":str;
-        if(str.match(/^[A-Za-z0-9]*$/)){
-            return true;
-        }else{
+        if(str.match(/[^A-Za-z]+/)){
             return false;
+        }else{
+            return true;
         }
     }
 
