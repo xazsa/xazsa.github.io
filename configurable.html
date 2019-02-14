@@ -12,15 +12,15 @@
 <a name="pagetop"></a>
 <H1>Tekura Setting</H1>
 
-<a name="start_year"></a>
+<a name="LC_START_YEAR"></a>
 Start Year(ex.Heisei→1989）<br>
 <div align="center">
-<input type="text" size="5" maxlength="4" id="lc_year"><br>
+<input type="text" size="5" maxlength="4" id="LC_START_YEAR"><br>
 </div>
-<a name="id_text"></a>
+<a name="LC_ID_TEXT"></a>
 ID Text (ex.Heisei→H）<br>
 <div align="center">
-<input type="text" size="5" maxlength="2" id="lc_id_text"><br>
+<input type="text" size="5" maxlength="2" id="LC_ID_TEXT"><br>
 </div>
 <hr>
 <div align="center">
@@ -44,17 +44,14 @@ ID Text (ex.Heisei→H）<br>
             //alert(JSON.stringify(keys));
             
             if (config_data[keys.LC_START_YEAR]) {
-                var obj = document.getElementById("lc_year");
+                var obj = document.getElementById("LC_START_YEAR");
                 obj.value = config_data[keys.LC_START_YEAR];
                 }
             if (config_data[keys.LC_ID_TEXT]) {
-                var obj = document.getElementById("lc_id_text");
+                var obj = document.getElementById("LC_ID_TEXT");
                 obj.value = config_data[keys.LC_ID_TEXT];
-            }
-            
+            }   
         }
-        
-        
     }
 
     function isAlpabet(str){
@@ -73,22 +70,22 @@ ID Text (ex.Heisei→H）<br>
     submit_button.addEventListener('click', function() {
         // Get the config data from the UI elements
         
-        var lc_year = document.getElementById('lc_year').value;
-        if(isNaN(lc_year)){
-            alert('Start year is not number:'+lc_year);
-            location.hash='start_year';
+        var start_year = document.getElementById('LC_START_YEAR').value;
+        if(isNaN(start_year)){
+            alert('Start year is not number:'+start_year);
+            location.hash='LC_START_YEAR';
             return;    
         }
 
-        var lc_id_text = document.getElementById('lc_id_text').value;
-        if(isAlpabet(lc_id_text)){
-            alert('ID Text only use Alpabet:'+lc_id_text);
-            location.hash='id_text';
+        var id_text = document.getElementById('LC_ID_TEXT').value;
+        if(isAlpabet(id_text)){
+            alert('ID Text only use Alpabet:'+id_text);
+            location.hash='LC_ID_TEXT';
             return;
         }
         // Make a data object to be sent, coercing value types to integers
-        config_data[keys.LC_START_YEAR] = parseInt(lc_year,10);
-        config_data[keys.LC_ID_TEXT] = lc_id_text;
+        config_data[keys.LC_START_YEAR] = parseInt(start_year,10);
+        config_data[keys.LC_ID_TEXT] = id_text;
         
         // Determine the correct return URL (emulator vs real watch)
         function getQueryParam(variable, defaultValue) {
@@ -109,8 +106,8 @@ ID Text (ex.Heisei→H）<br>
     });
 
     reset_button.addEventListener('click', function() {
-        document.getElementById("lc_year").value = 1989;
-        document.getElementById("lc_id_text").value = "H";
+        document.getElementById("LC_START_YEAR").value = 1989;
+        document.getElementById("LC_ID_TEXT").value = "H";
         location.hash='pagetop';
     });
 </script>
