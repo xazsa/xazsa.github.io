@@ -31,6 +31,12 @@ ID Text (ex.Heisei→H）<br>
 <div align="center">
 <input type="button" id='reset_button' value="RESET">
 </div>
+<hr>
+Last Location:
+lat: <input type="text" size="20" id="LAST_LATITUDE"><br>
+lon: <input type="text" size="20" id="LAST_LONGITUDE"><br>
+
+
 <script>
     var keys = {};
     var config_data = {};
@@ -50,7 +56,12 @@ ID Text (ex.Heisei→H）<br>
             if (config_data[keys.LC_ID_TEXT]) {
                 var obj = document.getElementById("LC_ID_TEXT");
                 obj.value = config_data[keys.LC_ID_TEXT];
-            }   
+            } 
+            if (config_data[keys.LAST_LATITUDE]) {
+                var obj = document.getElementById("LAST_LATITUDE");
+                obj.value = config_data[keys.LAST_LATITUDE];
+            }
+
         }
     }
 
