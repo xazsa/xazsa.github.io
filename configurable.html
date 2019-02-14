@@ -12,12 +12,12 @@
 <a name="pagetop"></a>
 <H1>Tekura Setting</H1>
 
-<a name="LC_START_YEAR"></a>
+<a name="START_YEAR"></a>
 Start Year(ex.Heisei→1989）<br>
 <div align="center">
 <input type="text" size="5" maxlength="4" id="LC_START_YEAR"><br>
 </div>
-<a name="LC_ID_TEXT"></a>
+<a name="ID_TEXT"></a>
 ID Text (ex.Heisei→H）<br>
 <div align="center">
 <input type="text" size="5" maxlength="2" id="LC_ID_TEXT"><br>
@@ -47,7 +47,7 @@ ID Text (ex.Heisei→H）<br>
             if (config_data[keys.LC_START_YEAR]) {
                 var obj = document.getElementById("LC_START_YEAR");
                 obj.value = config_data[keys.LC_START_YEAR];
-                }
+            }
             if (config_data[keys.LC_ID_TEXT]) {
                 var obj = document.getElementById("LC_ID_TEXT");
                 obj.value = config_data[keys.LC_ID_TEXT];
@@ -84,14 +84,14 @@ ID Text (ex.Heisei→H）<br>
         var start_year = document.getElementById('LC_START_YEAR').value;
         if(isNaN(start_year)){
             alert('Start year is not number:'+start_year);
-            location.hash='LC_START_YEAR';
+            location.hash='START_YEAR';
             return;    
         }
 
         var id_text = document.getElementById('LC_ID_TEXT').value;
         if(isAlpabet(id_text)){
             alert('ID Text only use Alpabet:'+id_text);
-            location.hash='LC_ID_TEXT';
+            location.hash='ID_TEXT';
             return;
         }
         // Make a data object to be sent, coercing value types to integers
