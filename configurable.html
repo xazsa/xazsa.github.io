@@ -86,13 +86,9 @@ ID Text (ex.Heisei→H）<br>
             return;
         }
         // Make a data object to be sent, coercing value types to integers
-        var options = {};
-        //'lc_year': parseInt(lc_year,10),
-        //'lc_id_text': lc_id_text
-        //};
-
-
-
+        config_data.LC_START_YEAR = parseInt(lc_year,10);
+        config_data.LC_ID_TEXT = lc_id_text;
+        
         // Determine the correct return URL (emulator vs real watch)
         function getQueryParam(variable, defaultValue) {
         var query = location.search.substring(1);
@@ -108,7 +104,7 @@ ID Text (ex.Heisei→H）<br>
         var return_to = getQueryParam('return_to', 'pebblejs://close#');
 
         // Encode and send the data when the page closes
-        document.location = return_to + encodeURIComponent(JSON.stringify(options));
+        document.location = return_to + encodeURIComponent(JSON.stringify(config_data));
     });
 
     reset_button.addEventListener('click', function() {
