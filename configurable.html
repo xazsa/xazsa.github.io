@@ -34,7 +34,7 @@ ID Text (ex.Heisei→H）<br>
 <script>
     var keys = {};
     var config_data = {};
-    
+
     //alert("#"+ window.location.search.substring(1)+"#");
     if(window.location.search.substring(1) != ""){
         var options = JSON.parse(decodeURIComponent(window.location.search.substring(1)));
@@ -87,8 +87,8 @@ ID Text (ex.Heisei→H）<br>
             return;
         }
         // Make a data object to be sent, coercing value types to integers
-        config_data.LC_START_YEAR = parseInt(lc_year,10);
-        config_data.LC_ID_TEXT = lc_id_text;
+        config_data[keys.LC_START_YEAR] = parseInt(lc_year,10);
+        config_data[keys.LC_ID_TEXT] = lc_id_text;
         
         // Determine the correct return URL (emulator vs real watch)
         function getQueryParam(variable, defaultValue) {
