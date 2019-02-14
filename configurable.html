@@ -31,14 +31,6 @@ ID Text (ex.Heisei→H）<br>
 <div align="center">
 <input type="button" id='reset_button' value="RESET">
 </div>
-<hr>
-Last Location:<br>
-lat: <input type="text" size="20" id="LAST_LATITUDE"><br>
-lon: <input type="text" size="20" id="LAST_LONGITUDE"><br>
-
-　
-<iframe src="https://maps.google.co.jp/maps?q=38.260123,140.882429&output=embed&t=m&z=16&hl=ja" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="300" height="300"></iframe>
-　
 
 <script>
     var keys = {};
@@ -61,8 +53,11 @@ lon: <input type="text" size="20" id="LAST_LONGITUDE"><br>
                 obj.value = config_data[keys.LC_ID_TEXT];
             } 
             if (config_data[keys.LAST_LATITUDE]) {
-                var obj = document.getElementById("LAST_LATITUDE");
-                obj.value = config_data[keys.LAST_LATITUDE];
+                var lat = config_data[keys.LAST_LATITUDE];
+                var lon = config_data[keys.LAST_LATITUDE];
+                document.write("<hr>");
+                document.write("Last Location:<br>");
+                document.write("<iframe src=¥"https://maps.google.co.jp/maps?q=38.260123,140.882429&output=embed&t=m&z=16&hl=ja¥" frameborder=¥"0¥" scrolling=¥"no¥" marginheight=¥"0¥" marginwidth=¥"0¥" width=¥"300¥" height=¥"300¥"></iframe>");
             }
 
         }
