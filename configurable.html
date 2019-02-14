@@ -54,11 +54,12 @@ ID Text (ex.Heisei→H）<br>
             } 
             if (config_data[keys.LAST_LATITUDE]) {
                 var lat = config_data[keys.LAST_LATITUDE];
-                var lon = config_data[keys.LAST_LATITUDE];
+                var lon = config_data[keys.LAST_LONGITUDE];
+                var timestamp = config_data[keys.LAST_TIMESTAMP];
                 document.write("<hr>");
                 document.write("Last Location:<br>");
                 document.write("<div align=\"center\"><iframe src=\"https://maps.google.co.jp/maps?q="+lat+","+lon+"&output=embed&t=m&z=16&hl=ja\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" width=\"300\" height=\"300\"></iframe></div>");
-            
+                document.write(timestamp+"<br>");
             }
 
         }
