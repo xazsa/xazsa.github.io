@@ -32,7 +32,9 @@ ID Text (ex.Heisei→H）<br>
 <input type="button" id='reset_button' value="RESET">
 </div>
 <script>
+    var keys = require('message_keys');
     //alert("#"+ window.location.search.substring(1)+"#");
+    alert('message_keys:'+JSON.stringify(keys));
     if(window.location.search.substring(1) != ""){
         var options = JSON.parse(decodeURIComponent(window.location.search.substring(1)));
         //alert(JSON.stringify(options));
