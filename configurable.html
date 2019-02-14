@@ -33,23 +33,27 @@ ID Text (ex.Heisei→H）<br>
 </div>
 <script>
     var keys = {};
+    var config_data = {};
     //alert("#"+ window.location.search.substring(1)+"#");
-    alert('message_keys:'+JSON.stringify(keys));
     if(window.location.search.substring(1) != ""){
         var options = JSON.parse(decodeURIComponent(window.location.search.substring(1)));
         if (options.keys) {
             keys = JSON.parse(options.keys);
-            alert(JSON.stringify(keys));
+            config_data = JSON.parse(options.config_data);
+            //alert(JSON.stringify(keys));
+            
+            if (config_data[keys.LC_START_YEAR]) {
+                var obj = document.getElementById("lc_year");
+                obj.value = config_data[keys.LC_START_YEAR];
+                }
+            if (config_data[keys.LC_ID_TEXT]) {
+                var obj = document.getElementById("lc_id_text");
+                obj.value = config_data[keys.LC_ID_TEXT];
+            }
+            
         }
         
-        if (options.lc_year) {
-            var obj = document.getElementById("lc_year");
-            obj.value = options.lc_year;
-        }
-        if (options.lc_id_text) {
-            var obj = document.getElementById("lc_id_text");
-            obj.value = options.lc_id_text;
-        }
+        
     }
 
     function isAlpabet(str){
@@ -82,10 +86,12 @@ ID Text (ex.Heisei→H）<br>
             return;
         }
         // Make a data object to be sent, coercing value types to integers
-        var options = {
-        'lc_year': parseInt(lc_year,10),
-        'lc_id_text': lc_id_text
-        };
+        var options = {};
+        //'lc_year': parseInt(lc_year,10),
+        //'lc_id_text': lc_id_text
+        //};
+
+
 
         // Determine the correct return URL (emulator vs real watch)
         function getQueryParam(variable, defaultValue) {
